@@ -57,5 +57,5 @@ apt-mark hold kubelet kubeadm kubectl
 echo ""
 echo "****************************************"
 echo ""
-ehco "you can not install k8s using:"
+echo "you can not install k8s using:"
 echo "kubeadm init --control-plane-endpoint=<public ip or DNS of the master node>"
