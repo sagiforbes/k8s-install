@@ -47,6 +47,15 @@ echo
 systemctl restart containerd
 systemctl enable containerd
 
+echo "install containerd cni prerequeisite"
+CONTAINERD_CNI_PLUGIN_VER="v1.3.0"
+
+echo "installing containerd cni plugin"
+wget https://raw.githubusercontent.com/containerd/containerd/main/script/setup/install-cni
+bash install-cni $CONTAINERD_CNI_PLUGIN_VER
+
+
+
 echo "install k8s tools"
 echo "================="
 echo "add k8s apt"

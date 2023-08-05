@@ -3,7 +3,6 @@
 source ./common.sh
 
 PODS_CIRD=$PODS_CIRD #comming from common
-
 MACHINE_IP=$(hostname -I |awk '{print $1}')
 
 echo "init k8s cluster usnig control-plain-endpoint ip: ${MACHINE_IP}"
