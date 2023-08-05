@@ -29,7 +29,11 @@ echo "install network service"
 wget https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/tigera-operator.yaml
 kubectl create -f tigera-operator.yaml
 
-wget https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/custom-resources.yaml
+yq_change_command=$(printf '.spec.calicoNetwork.ipPools.[0].cidr = "%s"', $PODS_CIRD)
+echo $yq_change_command
+
+
+yq e -i '.spec.calicoNetwork.ipPools.[0].cidr = "10.1.0.0/16"' calico-network-service.yaml
 
 
 echo "install metric service. Note the default command line changed to allow insecure node communication"
