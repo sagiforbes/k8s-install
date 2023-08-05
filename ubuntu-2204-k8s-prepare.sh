@@ -35,7 +35,7 @@ add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(
 echo "install containerd"
 echo ""
 apt update
-apt install -y containerd.io
+apt install -y containerd.io golang
 
 echo "configure containerd so that it starts using systemd as cgroup"
 echo ""

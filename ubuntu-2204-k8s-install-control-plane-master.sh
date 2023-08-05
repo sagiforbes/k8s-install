@@ -10,5 +10,9 @@ kubeadm init --control-plane-endpoint=${MACHINE_IP} --pod-network-cidr=10.1.0.0/
 mkdir -p ${HOME}/.kube
 cp /etc/kubernetes/admin.conf ${HOME}/.kube/config
 
+
+wget https://raw.githubusercontent.com/containerd/containerd/main/script/setup/install-cni
+bash install-cni v1.3.0
+
 wget  https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/canal.yaml
 kubectl apply -f canal.yaml
