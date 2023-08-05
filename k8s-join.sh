@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 echo "initial k8s"
-kubeadm init
 
 echo "on master control-plane node type:"
 echo "kubeadm token create --print-join-command"
